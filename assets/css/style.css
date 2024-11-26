@@ -54,7 +54,7 @@ form .input{
    justify-content: space-between;
    margin-bottom: 30px;
 }
-.input input{
+.input .input-element{
    font-size: 2rem;
 }
 .form-btn{
