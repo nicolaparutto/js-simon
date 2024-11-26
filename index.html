@@ -7,9 +7,41 @@
    <title>Simon Says</title>
 </head>
 <body>
+   <section class="game-section">
 
+      <div id="random-n-container" class="game">
+         <div id="countdown" class="counter"></div>
+         <h3>Memorizza più numeri possibile prima che scada il countdown!</h3>
+         
+         <ul id="number-list">
+            <li id="n1">0</li>
+            <li id="n2">0</li>
+            <li id="n3">0</li>
+            <li id="n4">0</li>
+            <li id="n5">0</li>
+         </ul>
+      </div>
 
+      <div id="write-n-container" class="write d-none">
+         <h3>Inserisci i numeri che ti ricordi (l'ordine non è importante)</h3>
+         
+         <form>
+            <div class="input">
+               <input type="number" id="" class="input-element" min="1" max="50" required>
+               <input type="number" id="" class="input-element" min="1" max="50" required>
+               <input type="number" id="" class="input-element" min="1" max="50" required>
+               <input type="number" id="" class="input-element" min="1" max="50" required>
+               <input type="number" id="" class="input-element" min="1" max="50" required>
+            </div>
+            <div>
+               <button class="form-btn">Verifica</button>
+            </div>
+         </form>
+      </div>
+   </section>
    
+
+
    <script src="JS/script.js"></script>
 </body>
 </html>
