@@ -3,8 +3,8 @@ const countDown = document.getElementById('countdown');
 const countDownContainer = document.getElementById('random-n-container');
 const writeContainer = document.getElementById('write-n-container');
 
-//Sistema di countdown:
-let seconds = 2;
+//sistema di countdown:
+let seconds = 10;
 
 countDown.innerHTML= seconds--;
 
@@ -18,15 +18,15 @@ const timer = setInterval(function(){
    seconds--;
 }, 1000);
 
-//Generazione random dei 5 numeri:
-// salvo i 5 elementi in cui inserirò i numeri casuali:
+
+//salvo i 5 elementi in cui inserirò i numeri casuali:
 const liNum1 = document.getElementById('n1');
 const liNum2 = document.getElementById('n2');
 const liNum3 = document.getElementById('n3');
 const liNum4 = document.getElementById('n4');
 const liNum5 = document.getElementById('n5');
 
-//sistema dei numeri random:
+//generazione random dei 5 numeri:
 const min = 1;
 const max = 50;
 let randNum1 = Math.floor(Math.random() * (max - min + 1) + min);
@@ -65,14 +65,19 @@ form.addEventListener('submit', (event) => {
       parseInt(num5.value)
    ];
 
+   //generazione di un array che mi salva solo i numeri uguali tra quelli che ho inserito e quelli genereati casualmente:
    function returnArray (array1, array2){
       return array1.filter(number => array2.includes(number));
    }
 
-   //richiamo l'elemento in cui stamperò il risultato finale:
+   //richiamo gli elementi in cui stamperò il risultato finale:
    const finalResult = document.getElementById('final-result');
+   const totalNumbers = document.getElementById('total-numbers');
+   
+   //stampo il risultato finale:
    console.log(returnArray(arrayNumGenerati, numeriInseriti));
-   finalResult.innerHTML = `Hai indovinato questi numeri: ${returnArray(arrayNumGenerati, numeriInseriti)}`;
+   totalNumbers.innerHTML = `Hai indovinato ${returnArray(arrayNumGenerati, numeriInseriti).length} numeri in totale!`;
+   finalResult.innerHTML = `I numeri che hai indovinato sono: ${returnArray(arrayNumGenerati, numeriInseriti)}`;
 
 
    //reset valori inseriti:
